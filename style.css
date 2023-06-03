@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.outer-container{
+    background-color: hsl(0, 0%, 94%);
+   width: 90%;
+   display: flex;
+   min-height: 568px;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0px 0px 10px gray;
+    
+
+}
+.inner-container{
+    background-color: hsl(0, 0%, 100%);
+    width: 60%;
+    max-width: 550px;
+    min-width: 300px;
+
+    height: 400px;
+    min-height: 250px;
+    border-radius: 10px 10px 30% 10px;
+    box-shadow: 0px 0px 4px gray;
+    padding: 30px;
+
+  
+}
+.bottom-content{
+    padding: 10px;
+
+}
+
+.label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: "Poppins";
+    color:  hsl(0, 1%, 44%);
+    font-weight: 30;
+  
+}
+.input{
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    
+}
+input{
+    width: 100px;
+    height: 55px;
+}
+.circle{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: hsl(259, 100%, 65%);
+    position: absolute;
+    top: -35px;
+    
+    right: 0;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    background-color:  hsl(0, 1%, 44%);
+    position: relative;
+
+}
+.top-content{
+    width: 400px;
+}
+.output{
+    font-size: 72px;
+    font-weight:900;
+    color: hsl(259, 100%, 65%);
+    margin-right: 10px;
+}
+.paragraph{
+    font-size:32px;
+    font-weight: 900;
+    color: black;
+    margin: 1px 0;
+    font-family: "Poppins";
+}
