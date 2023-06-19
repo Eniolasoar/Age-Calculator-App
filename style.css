@@ -3,6 +3,7 @@
 }
 
 body{
+    background-color: hsl(0, 0%, 94%);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -10,23 +11,20 @@ body{
     align-items: center;
 }
 .outer-container{
-    background-color: hsl(0, 0%, 94%);
+
    width: 90%;
    display: flex;
    min-height: 568px;
    align-items: center;
    justify-content: center;
-   box-shadow: 0px 0px 10px gray;
     
 
 }
-.inner-container{
+.content{
     background-color: hsl(0, 0%, 100%);
     width: 60%;
     max-width: 550px;
     min-width: 300px;
-
-    height: 400px;
     min-height: 250px;
     border-radius: 10px 10px 30% 10px;
     box-shadow: 0px 0px 4px gray;
@@ -35,30 +33,52 @@ body{
   
 }
 .bottom-content{
-    padding: 10px;
+    padding: 30px 0 30px 0 ;
 
 }
 
 .label{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around; */
+    
     font-family: "Poppins";
     color:  hsl(0, 1%, 44%);
-    font-weight: 30;
+    font-weight: 200;
   
+}
+.label p:nth-child(1){
+    display: inline-block;
+    margin: 2px 0px 2px 15px;
+}
+.label p:nth-child(2){
+    display: inline-block;
+    margin: 2px 0px 2px 100px;
+    text-align: left;
+}
+.label p:nth-child(3){
+    display: inline-block;
+    margin: 2px 70px;
+    text-align: left;
 }
 .input{
   
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+  
+
     
 }
 input{
-    width: 100px;
-    height: 55px;
+    width: 110px;
+    height: 45px;  color: black;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Poppins";
+    padding: 15px;
+
 }
 .circle{
     width: 70px;
@@ -81,15 +101,32 @@ input{
     width: 400px;
 }
 .output{
-    font-size: 72px;
-    font-weight:900;
+    font-family: "Poppins";
+    font-size: 69px !important;
+    font-weight:900 !important;
     color: hsl(259, 100%, 65%);
     margin-right: 10px;
 }
 .paragraph{
-    font-size:32px;
-    font-weight: 900;
+    height: 80px;
+    font-size:69px;
+    font-weight:900 !important;
     color: black;
     margin: 1px 0;
     font-family: "Poppins";
+}
+.material-symbols-outlined{
+    /*on hover,move symbol*/
+    font-size: 64px !important;
+    font-weight: 900 !important;
+    padding-left: 2px;
+    padding-top: 3px;
+    transition: 1s all;
+}
+.circle:hover{
+    cursor: pointer;
+    background-color:  rgba(133, 77, 255,90%);
+}
+.circle:hover .material-symbols-outlined{
+    padding-top: 15px;
 }
