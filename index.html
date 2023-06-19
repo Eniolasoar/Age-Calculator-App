@@ -6,10 +6,10 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
   
   <title>Frontend Mentor | Age calculator app</title>
 
@@ -28,12 +28,12 @@
         </div>
         <div class="input">
               
-          <input type="text" name="" id="day">
+          <input type="text" name="" id="day" >
 
           <input type="text" name="" id="month">
 
 
-          <input type="text" name="" id="year">
+          <input type="text" name="" id="year" >
 
         </div>
 
@@ -42,20 +42,50 @@
       
       </div>
       <div class="line">
-        <div class="circle">
+        <div class="circle" id="button">
           <span class="material-symbols-outlined">
             arrow_downward
             </span>
         </div>
       </div>
       <div class="bottom-content">
-        <p class="paragraph"><span class="dayOutput output">38</span>years</p>
-        <p class="paragraph"><span class="monthOutput output">3</span>months</p>
-        <p class="paragraph"><span class="yearOutput output">26</span>days</p>
+        <p class="paragraph"><span class="yearOutput output"></span>years</p>
+        <p class="paragraph"><span class="monthOutput output"></span>months</p>
+        <p class="paragraph"><span class="dayOutput output"></span>days</p>
         
         
         
       </div>
+      <script>
+        let day=document.querySelector("#day").value;
+        let month=document.querySelector("#month").value;
+        let year=document.querySelector("#year").value;
+
+        
+        document.querySelector("#button").addEventListener("click",function(){
+          console.log(year)
+        })
+
+        document.querySelector("#button").addEventListener("click",function(){
+          let dayOutput=document.querySelector(".dayOutput");
+        let monthOutput=document.querySelector(".monthOutput");
+        let yearOutput=document.querySelector(".yearOutput");
+
+            let yearDate=new Date().getFullYear();
+            console.log(yearDate);
+            let calculatedYear=yearDate-year;
+            yearOutput.innerHTML=calculatedYear;
+
+            let monthDate=new Date().getMonth();
+            console.log(monthDate);
+            let calculatedMonth=monthDate-month;
+            monthOutput.innerHTML=calculatedMonth;
+
+            let dayDate=new Date().getDay();
+            console.log(`The day is ${dayDate}`);
+        })
+
+      </script>
     </div>
  </div>
 
