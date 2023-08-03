@@ -1,93 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
-  
-  <title>Frontend Mentor | Age calculator app</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
 
-
-
-</head>
-<body>
-
- <div class="outer-container">
-    <div class="content">
-      <div class="top-content">
-        <div class="label">
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <div class="outer-container">
+      <div class="content">
+        <div class="top-content">
+          <div class="label">
             <p>DAY</p>
             <p>MONTH</p>
             <p>YEAR</p>
+          </div>
+          <div class="input">
+            <input type="text" name="" id="day" />
+
+            <input type="text" name="" id="month" />
+
+            <input type="text" name="" id="year" />
+          </div>
         </div>
-        <div class="input">
-              
-          <input type="text" name="" id="day" >
-
-          <input type="text" name="" id="month">
-
-
-          <input type="text" name="" id="year" >
-
+        <div class="line">
+          <div class="circle" id="button">
+            <span class="material-symbols-outlined"> arrow_downward </span>
+          </div>
         </div>
-
-      
-
-      
-      </div>
-      <div class="line">
-        <div class="circle" id="button">
-          <span class="material-symbols-outlined">
-            arrow_downward
-            </span>
+        <div class="bottom-content">
+          <p class="paragraph"><span class="yearOutput output"></span>years</p>
+          <p class="paragraph">
+            <span class="monthOutput output"></span>months
+          </p>
+          <p class="paragraph"><span class="dayOutput output"></span>days</p>
         </div>
+        <script>
+          document
+            .querySelector("#button")
+            .addEventListener("click", function () {
+              let currentDate = new Date();
+
+              //This is the output location
+              let dayOutput = document.querySelector(".dayOutput");
+              let monthOutput = document.querySelector(".monthOutput");
+              let yearOutput = document.querySelector(".yearOutput");
+
+              // Get user-provided values for day, month, and year from input fields.
+              const day = parseInt(document.querySelector("#day").value, 10);
+              const month =
+                parseInt(document.querySelector("#month").value, 10) - 1; // Subtract 1 to get the correct month (0 to 11)
+              const year = parseInt(document.querySelector("#year").value, 10);
+
+              const yearDate = currentDate.getFullYear();
+              const monthDate = currentDate.getMonth();
+              const dayDate = currentDate.getDate();
+
+              let calculatedYear = yearDate - year;
+  let calculatedMonth = monthDate - month;
+        let calculatedDay=dayDate-day;
+
+  // Check if the birthday hasn't occurred yet this year
+  if (monthDate < month || (monthDate === month && dayDate < day)) {
+    calculatedYear -= 1;
+  }
+
+  // Adjust the calculatedMonth and calculatedDays based on day and month comparison
+  if (dayDate < day) {
+    calculatedMonth -= 1;
+    const prevMonthDate = new Date(yearDate, monthDate - 1, day);
+    const daysInPrevMonth = (currentDate - prevMonthDate) / (1000 * 3600 * 24);
+    calculatedDay += daysInPrevMonth;
+  }
+
+  if (monthDate < month || (monthDate === month && dayDate < day)) {
+    calculatedMonth += 12;
+  }
+
+  yearOutput.innerHTML = calculatedYear;
+  monthOutput.innerHTML = calculatedMonth;
+  dayOutput.innerHTML=Math.floor(calculatedDay);
+            });
+        </script>
       </div>
-      <div class="bottom-content">
-        <p class="paragraph"><span class="yearOutput output"></span>years</p>
-        <p class="paragraph"><span class="monthOutput output"></span>months</p>
-        <p class="paragraph"><span class="dayOutput output"></span>days</p>
-        
-        
-        
-      </div>
-      <script>
-        let day=document.querySelector("#day").value;
-        let month=document.querySelector("#month").value;
-        let year=document.querySelector("#year").value;
-
-        
-        document.querySelector("#button").addEventListener("click",function(){
-          console.log(year)
-        })
-
-        document.querySelector("#button").addEventListener("click",function(){
-          let dayOutput=document.querySelector(".dayOutput");
-        let monthOutput=document.querySelector(".monthOutput");
-        let yearOutput=document.querySelector(".yearOutput");
-
-            let yearDate=new Date().getFullYear();
-            console.log(yearDate);
-            let calculatedYear=yearDate-year;
-            yearOutput.innerHTML=calculatedYear;
-
-            let monthDate=new Date().getMonth();
-            console.log(monthDate);
-            let calculatedMonth=monthDate-month;
-            monthOutput.innerHTML=calculatedMonth;
-
-            let dayDate=new Date().getDay();
-            console.log(`The day is ${dayDate}`);
-        })
-
-      </script>
     </div>
- </div>
-
-</body>
+  </body>
 </html>
