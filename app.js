@@ -1,3 +1,4 @@
+
 document.querySelector("#button").addEventListener("click", function () {
   let currentDate = new Date();
 
