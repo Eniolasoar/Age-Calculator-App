@@ -1,29 +1,27 @@
-document
-            .querySelector("#button")
-            .addEventListener("click", function () {
-              let currentDate = new Date();
+document.querySelector("#button").addEventListener("click", function () {
+  let currentDate = new Date();
 
-              //This is the output location
-              let dayOutput = document.querySelector(".dayOutput");
-              let monthOutput = document.querySelector(".monthOutput");
-              let yearOutput = document.querySelector(".yearOutput");
+  //This is the output location
+  let dayOutput = document.querySelector(".dayOutput");
+  let monthOutput = document.querySelector(".monthOutput");
+  let yearOutput = document.querySelector(".yearOutput");
 
-              // Get user-provided values for day, month, and year from input fields.
-              const day = parseInt(document.querySelector("#day").value, 10);
-              const month =
-                parseInt(document.querySelector("#month").value, 10) - 1; // Subtract 1 to get the correct month (0 to 11)
-              const year = parseInt(document.querySelector("#year").value, 10);
+  // Get user-provided values for day, month, and year from input fields.
+  const day = parseInt(document.querySelector("#day").value, 10);
+  const month = parseInt(document.querySelector("#month").value, 10) - 1; // Subtract 1 to get the correct month (0 to 11)
+  const year = parseInt(document.querySelector("#year").value, 10);
 
-              const yearDate = currentDate.getFullYear();
-              const monthDate = currentDate.getMonth();
-              const dayDate = currentDate.getDate();
+  const yearDate = currentDate.getFullYear();
+  const monthDate = currentDate.getMonth();
+  const dayDate = currentDate.getDate();
 
-              let calculatedYear = yearDate - year;
+  let calculatedYear = yearDate - year;
   let calculatedMonth = monthDate - month;
-        let calculatedDay=dayDate-day;
+  let calculatedDay = dayDate - day;
 
   // Check if the birthday hasn't occurred yet this year
-  if (monthDate < month || (monthDate === month && dayDate < day)) {
+  //if current month is lesser than birth month
+  if (month > monthDate|| (month === monthDate && day > dayDate)) {
     calculatedYear -= 1;
   }
 
@@ -35,11 +33,9 @@ document
     calculatedDay += daysInPrevMonth;
   }
 
-  if (monthDate < month || (monthDate === month && dayDate < day)) {
-    calculatedMonth += 12;
-  }
+
 
   yearOutput.innerHTML = calculatedYear;
   monthOutput.innerHTML = calculatedMonth;
-  dayOutput.innerHTML=Math.floor(calculatedDay);
-            });
+  dayOutput.innerHTML = Math.floor(calculatedDay);
+});

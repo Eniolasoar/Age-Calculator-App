@@ -1,132 +1,125 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    background-color: hsl(0, 0%, 94%);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
+body {
+  background-image: linear-gradient(200deg,hsl(259, 100%, 65%),white);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
-.outer-container{
-
-   width: 90%;
-   display: flex;
-   min-height: 568px;
-   align-items: center;
-   justify-content: center;
-    
-
+h2{
+  font-size: 40px;
+  margin: 0;
 }
-.content{
-    background-color: hsl(0, 0%, 100%);
-    width: 60%;
-    max-width: 550px;
-    min-width: 300px;
-    min-height: 250px;
-    border-radius: 10px 10px 30% 10px;
-    box-shadow: 0px 0px 4px gray;
-    padding: 30px;
-
-  
+.outer-container {
+  width: 90%;
+  display: flex;
+  min-height: 568px;
+  align-items: center;
+  justify-content: center;
 }
-.bottom-content{
-    padding: 30px 0 30px 0 ;
-
+.content {
+  background-color: hsl(0, 0%, 100%);
+  width: 60%;
+  max-width: 550px;
+  min-width: 300px;
+  min-height: 250px;
+  border-radius: 10px 10px 30% 10px;
+  box-shadow: 0px 0px 4px gray;
+  padding: 30px;
+}
+.bottom-content {
+  padding: 30px 0 30px 0;
 }
 
-.label{
-    /* display: flex;
+.label {
+  /* display: flex;
     flex-direction: row;
     justify-content: space-around; */
-    
-    font-family: "Poppins";
-    color:  hsl(0, 1%, 44%);
-    font-weight: 200;
-  
-}
-.label p:nth-child(1){
-    display: inline-block;
-    margin: 2px 0px 2px 15px;
-}
-.label p:nth-child(2){
-    display: inline-block;
-    margin: 2px 0px 2px 100px;
-    text-align: left;
-}
-.label p:nth-child(3){
-    display: inline-block;
-    margin: 2px 70px;
-    text-align: left;
-}
-.input{
-  
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 25px;
-  
 
-    
+  font-family: "Poppins";
+  color: hsl(0, 1%, 44%);
+  font-weight: 300;
+  font-size: 13px;
 }
-input{
-    width: 110px;
-    height: 45px;  color: black;
-    font-size: 32px;
-    font-weight: 700;
-    font-family: "Poppins";
-    padding: 15px;
+.label p:nth-child(1) {
+  display: inline-block;
+  margin: 2px 0px 2px 15px;
+}
+.label p:nth-child(2) {
+  display: inline-block;
+  margin: 2px 0px 2px 100px;
+  text-align: left;
+}
+.label p:nth-child(3) {
+  display: inline-block;
+  margin: 2px 70px;
+  text-align: left;
+}
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
+input {
+  width: 110px;
+  height: 45px;
+  color: black;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Poppins";
+  padding: 15px;
+}
+.circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: hsl(259, 100%, 65%);
+  position: absolute;
+  top: -35px;
 
+  right: 0;
 }
-.circle{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: hsl(259, 100%, 65%);
-    position: absolute;
-    top: -35px;
-    
-    right: 0;
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: hsl(0, 1%, 44%);
+  position: relative;
 }
-.line{
-    width: 100%;
-    height: 1px;
-    background-color:  hsl(0, 1%, 44%);
-    position: relative;
-
+.top-content {
+  width: 400px;
 }
-.top-content{
-    width: 400px;
+.output {
+  font-family: "Poppins";
+  font-size: 69px !important;
+  font-weight: 900 !important;
+  color: hsl(259, 100%, 65%);
+  margin-right: 10px;
 }
-.output{
-    font-family: "Poppins";
-    font-size: 69px !important;
-    font-weight:900 !important;
-    color: hsl(259, 100%, 65%);
-    margin-right: 10px;
+.paragraph {
+  height: 80px;
+  font-size: 69px;
+  font-weight: 900 !important;
+  color: black;
+  margin: 1px 0;
+  font-family: "Poppins";
 }
-.paragraph{
-    height: 80px;
-    font-size:69px;
-    font-weight:900 !important;
-    color: black;
-    margin: 1px 0;
-    font-family: "Poppins";
+.material-symbols-outlined {
+  /*on hover,move symbol*/
+  font-size: 64px !important;
+  font-weight: 900 !important;
+  padding-left: 2px;
+  padding-top: 3px;
+  transition: 1s all;
 }
-.material-symbols-outlined{
-    /*on hover,move symbol*/
-    font-size: 64px !important;
-    font-weight: 900 !important;
-    padding-left: 2px;
-    padding-top: 3px;
-    transition: 1s all;
+.circle:hover {
+  cursor: pointer;
+  background-color: rgba(133, 77, 255, 90%);
 }
-.circle:hover{
-    cursor: pointer;
-    background-color:  rgba(133, 77, 255,90%);
-}
-.circle:hover .material-symbols-outlined{
-    padding-top: 15px;
+.circle:hover .material-symbols-outlined {
+  padding-top: 15px;
 }
