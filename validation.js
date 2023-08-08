@@ -1,19 +1,20 @@
 document.querySelector("#button").addEventListener('click',function(){
+    //input
     let dayInput=document.getElementById("day");
     let monthInput=document.getElementById("month");
     let yearInput=document.getElementById("year");
 
+    //input value
     let day=document.querySelector("#day").value;
     let  month=document.querySelector("#month").value;
     let year=document.querySelector("#year").value;
 
-    let labelCollection=document.getElementsByClassName("label");
-    let errorMessage=document.getElementsByClassName("errorMessage");
-
+    //input labels
     let dayLabel=document.getElementById("dayLabel");
     let monthLabel=document.getElementById("monthLabel");
     let yearLabel =document.getElementById("yearLabel");
 
+    //input error message
     let errorMessage1=document.getElementById("errorMessage1");
     let errorMessage2=document.getElementById("errorMessage2");
     let errorMessage3=document.getElementById("errorMessage3")
@@ -41,24 +42,36 @@ document.querySelector("#button").addEventListener('click',function(){
         calculateAge();
     }
 
-    let input=document.getElementsByTagName("input");
-    for(let i=0;i<input.length;i++){
-        input[i].addEventListener('input',function(){
-            //how to check if the input is empty
-            if(input[i].value==""){
-                this.style.border="1px solid red";
-            }
+    dayInput.addEventListener('input',function(){
+        applyStyle(this,dayLabel,errorMessage1);
+    });
 
-        })
-    }
+    monthInput.addEventListener('input',function(){
+        applyStyle(this,monthLabel,errorMessage2);
+    });
+
+    yearInput.addEventListener('input',function(){
+        applyStyle(this,yearLabel,errorMessage3);
+    })
+
+
     
 });
 
-function applyStyle(element){
-    if(element==""){
-        element.style.border="1px solid red";
-        
-    }
+function applyStyle(element,elementLabel,elementOutput){
+    if (element.value == "") {
+        element.style.border = "1px solid red";
+        elementLabel.style.color="red";
+        elementOutput.innerHTML = "This field is required ";
+        elementOutput.style.color="red";
+        submitButton();
+      } else if (element.value !== "") {
+        element.style.border = "1px solid green";
+        elementLabel.style.color="grey";
+        elementOutput.innerHTML = "";
+
+    
+      }
 }
 
 function calculateAge(){
