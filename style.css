@@ -104,6 +104,7 @@ input:focus{
   height: 1px;
   background-color: hsl(0, 1%, 44%);
   position: relative;
+  top:20px;
 }
 .top-content {
   display: flex;
