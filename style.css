@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: linear-gradient(200deg,hsl(259, 100%, 65%),white);
+  background-color: hsl(0, 0%, 94%);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -15,7 +15,7 @@ h2{
   margin: 0;
 }
 .outer-container {
-  width: 90%;
+  width: 100%;
   display: flex;
   min-height: 568px;
   align-items: center;
@@ -93,7 +93,6 @@ input:focus{
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: hsl(259, 100%, 65%);
   position: absolute;
   top: -35px;
 
@@ -103,6 +102,7 @@ input:focus{
   width: 100%;
   height: 1px;
   background-color: hsl(0, 1%, 44%);
+  opacity: 0.3;
   position: relative;
   top:20px;
 }
@@ -110,7 +110,7 @@ input:focus{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 400px;
+  max-width: 400px;
 }
 .output {
   font-family: "Poppins";
@@ -129,7 +129,7 @@ input:focus{
 }
 .material-symbols-outlined {
   /*on hover,move symbol*/
-  font-size: 64px !important;
+  font-size: 70px !important;
   font-weight: 900 !important;
   padding-left: 2px;
   padding-top: 3px;

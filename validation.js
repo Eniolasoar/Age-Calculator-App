@@ -1,4 +1,7 @@
 document.querySelector("#button").addEventListener('click',function(){
+
+    let button=document.getElementById("button");
+    button.style.color="hsl(259, 100%, 65%)";
     //input
     let dayInput=document.getElementById("day");
     let monthInput=document.getElementById("month");
@@ -37,41 +40,122 @@ document.querySelector("#button").addEventListener('click',function(){
         errorMessage3.innerHTML="This field is required";
         errorMessage3.style.color="red";
     }
+    if(day<1 || day>31){
+        dayInput.style.border="1px solid red";
+        dayLabel.style.color="red";
+        errorMessage1.innerHTML="Please enter a valid date!";
+        errorMessage1.style.color="red";
 
-    if(day!=="" && month!=="" && year!==""){
-        calculateAge();
+    }
+    if(month<1 || month>12){
+        monthInput.style.border="1px solid red";
+        monthLabel.style.color="red";
+        errorMessage2.innerHTML="Please enter a valid month";
+        errorMessage2.style.color="red";
+    }
+    let currentYear=new Date().getFullYear;
+    if(year>currentYear){
+        yearInput.style.border="1px solid red";
+        yearLabel.style.color="red";
+        errorMessage3.innerHTML="Please enter a valid year";
+        errorMessage1.style.color="red";
+    }
+
+    if(day!=="" && month!=="" && year!=="" ){
+        if(day>=1 || day<=31){
+            if(month>=1 || month<=12){
+                if(year>currentYear){
+                    calculateAge();
+                }
+            }
+        }
+        
     }
 
     dayInput.addEventListener('input',function(){
-        applyStyle(this,dayLabel,errorMessage1);
+        applyDayStyle(this,dayLabel,errorMessage1);
     });
 
     monthInput.addEventListener('input',function(){
-        applyStyle(this,monthLabel,errorMessage2);
+        applyMonthStyle(this,monthLabel,errorMessage2);
     });
 
     yearInput.addEventListener('input',function(){
-        applyStyle(this,yearLabel,errorMessage3);
+        applyYearStyle(this,yearLabel,errorMessage3);
     })
 
 
     
 });
 
-function applyStyle(element,elementLabel,elementOutput){
+//creating seperating functions for each styling and validation 
+function applyDayStyle(element,elementLabel,elementOutput){
     if (element.value == "") {
         element.style.border = "1px solid red";
         elementLabel.style.color="red";
         elementOutput.innerHTML = "This field is required ";
         elementOutput.style.color="red";
-        submitButton();
-      } else if (element.value !== "") {
-        element.style.border = "1px solid green";
-        elementLabel.style.color="grey";
-        elementOutput.innerHTML = "";
+      }  
+      if(element.value<1 | element.value>31){
+        element.style.border="1px solid red";
+        elementLabel.style.color="red";
+        elementOutput.innerHTML="Please enter a valid date!";
+        elementOutput.style.color="red";
 
-    
-      }
+    }
+    if(element.value!=="" &&((element.value>=1 || element.value<=31))){
+        
+                    element.style.border = "1px solid green";
+                    elementLabel.style.color="grey";
+                    elementOutput.innerHTML = "";
+    }
+}
+
+function applyMonthStyle(element,elementLabel,elementOutput){
+    if (element.value == "") {
+        element.style.border = "1px solid red";
+        elementLabel.style.color="red";
+        elementOutput.innerHTML = "This field is required ";
+        elementOutput.style.color="red";
+      }  
+      if(element.value<1 || element.value>12){
+        element.style.border="1px solid red";
+        elementLabel.style.color="red";
+        elementOutput.innerHTML="Please enter a valid date!";
+        elementOutput.style.color="red";
+
+    }
+    if(element.value!==""){
+        if(element.value>=1 || element.value<=12){
+            element.style.border = "1px solid green";
+                    elementLabel.style.color="grey";
+                    elementOutput.innerHTML = "";
+        }
+    }
+}
+
+function applyYearStyle(element,elementLabel,elementOutput){
+    if (element.value == "") {
+        element.style.border = "1px solid red";
+        elementLabel.style.color="red";
+        elementOutput.innerHTML = "This field is required ";
+        elementOutput.style.color="red";
+      }  
+      let currentYear=new Date().getFullYear;
+    if(element.value>currentYear){
+        element.style.border="1px solid red";
+        elementLabel.style.color="red";
+        elementOutput.innerHTML="Please enter a valid date!";
+        elementOutput.style.color="red";
+
+    }
+    if(element.value!==""){
+        if(element.value<currentYear){
+            element.style.border = "1px solid green";
+                    elementLabel.style.color="grey";
+                    elementOutput.innerHTML = "";
+        }
+    }
 }
 
 function calculateAge(){
