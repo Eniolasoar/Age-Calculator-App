@@ -53,12 +53,12 @@ document.querySelector("#button").addEventListener('click',function(){
         errorMessage2.innerHTML="Please enter a valid month";
         errorMessage2.style.color="red";
     }
-    let currentYear=new Date().getFullYear;
+    let currentYear=new Date().getFullYear();
     if(year>currentYear){
         yearInput.style.border="1px solid red";
         yearLabel.style.color="red";
         errorMessage3.innerHTML="Please enter a valid year";
-        errorMessage1.style.color="red";
+        errorMessage3.style.color="red";
     }
 
     if(day!=="" && month!=="" && year!=="" ){
@@ -103,7 +103,7 @@ function applyDayStyle(element,elementLabel,elementOutput){
         elementOutput.style.color="red";
 
     }
-    if(element.value!=="" &&((element.value>=1 || element.value<=31))){
+    if(element.value!=="" &&((element.value>=1 && element.value<=31))){
         
                     element.style.border = "1px solid green";
                     elementLabel.style.color="grey";
@@ -126,7 +126,7 @@ function applyMonthStyle(element,elementLabel,elementOutput){
 
     }
     if(element.value!==""){
-        if(element.value>=1 || element.value<=12){
+        if(element.value>=1 && element.value<=12){
             element.style.border = "1px solid green";
                     elementLabel.style.color="grey";
                     elementOutput.innerHTML = "";
@@ -141,7 +141,7 @@ function applyYearStyle(element,elementLabel,elementOutput){
         elementOutput.innerHTML = "This field is required ";
         elementOutput.style.color="red";
       }  
-      let currentYear=new Date().getFullYear;
+      let currentYear=new Date().getFullYear();
     if(element.value>currentYear){
         element.style.border="1px solid red";
         elementLabel.style.color="red";
