@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style2.css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <h2>Age Calculator App</h2>
+    <div class="outer-container">
+      
+    <div class="content">
+        <div class="top-content">
+            <div class="box"style="text-align: center;">
+                <p id="dayLabel"class="label">DAY</p>
+                <input type="text" name="" id="day" placeholder="DD"/>
+                <span id="errorMessage1" class="errorMessage" ></span>
+            </div>
+                    
+            
+            <div class="box"style="text-align: center;">
+                <p id="monthLabel"class="label">MONTH</p>
+              <input type="text" name="" id="month" placeholder="MM"/>
+              <span id="errorMessage2"class="errorMessage"></span>
+            </div>
+            
+            <div class="box"style="text-align: center;">
+                <p id="yearLabel"class="label">YEAR</p>
+              <input type="text" name="" id="year" placeholder="YY"/>
+              <span id="errorMessage3"class="errorMessage"></span>
+            </div>
+            
+
+
+        </div>
+
+        <div class="line">
+          <div class="circle" id="button" style=" background-color: black !important;opacity: 1;">
+            <span class="material-symbols-outlined"> arrow_downward </span>
+          </div>
+        </div>
+        <div class="bottom-content">
+          <p class="paragraph"><span class="yearOutput output">- -</span>years</p>
+          <p class="paragraph">
+            <span class="monthOutput output">- -</span>months
+          </p>
+          <p class="paragraph"><span class="dayOutput output">- -</span>days</p>
+        </div>
+      </div>
+      <script src="validation.js"></script>
+    </div>
+  </body>
+</html>
