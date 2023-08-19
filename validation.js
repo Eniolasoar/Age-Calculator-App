@@ -8,6 +8,8 @@ document.querySelector("#button").addEventListener("click", function () {
   let month = document.querySelector("#month").value;
   let year = document.querySelector("#year").value;
 
+  
+
   // day=parseInt(day);
   // month=parseInt(month);
 
@@ -21,7 +23,7 @@ document.querySelector("#button").addEventListener("click", function () {
   let errorMessage2 = document.getElementById("errorMessage2");
   let errorMessage3 = document.getElementById("errorMessage3");
 
-  if (day == "") {
+  if (day=="") {
     dayInput.style.border = "1px solid red";
     dayLabel.style.color = "red";
     errorMessage1.innerHTML = "This field is required";
@@ -59,10 +61,10 @@ document.querySelector("#button").addEventListener("click", function () {
     errorMessage3.style.color = "red";
   }
 
-  if (checkValidDate(day, month) == "false") {
+  if (checkValidDate(day, month) === false) {
     dayInput.style.border = "1px solid red";
     dayLabel.style.color = "red";
-    errorMessage1.innerHTML = "Please enter a valid date!";
+    errorMessage1.innerHTML = "Invalid date!";
     errorMessage1.style.color = "red";
   }
 
@@ -70,10 +72,9 @@ document.querySelector("#button").addEventListener("click", function () {
     if (day >= 1 || day <= 31) {
       if (month >= 1 || month <= 12) {
         if (year <= currentYear) {
-          if (checkValidDate(day, month) == "true") {
-            console.log(day);
-            console.log(month);
-            console.log(checkValidDate(day, month));
+          console.log("Day:", day);
+console.log("Month:", month);
+          if (checkValidDate(day, month) === true) {
             calculateAge();
           }
         }
@@ -175,9 +176,11 @@ function applyYearStyle(element, elementLabel, elementOutput) {
 
 //a function to check the validity of a date(emphasis on the day)
 function checkValidDate(day, month) {
-  let valid = "true";
+  let newday = parseInt(day, 10);
+  let newmonth = parseInt(month, 10);
+  let valid = true;
   //using switch statement
-  switch (month) {
+  switch (newmonth) {
     case 1:
     case 3:
     case 5:
@@ -185,22 +188,22 @@ function checkValidDate(day, month) {
     case 8:
     case 10:
     case 12:
-      if (day > 31) {
-        valid = "false";
+      if (newday > 31) {
+        valid = false;
       }
       break;
     case 2:
       //February day is assumed to be 28 days
-      if (day > 28) {
-        valid = "false";
+      if (newday > 28) {
+        valid = false;
       }
       break;
     case 4:
     case 6:
     case 9:
     case 11:
-      if (day > 30) {
-        valid = "false";
+      if (newday > 30) {
+        valid = false;
       }
       break;
   }
