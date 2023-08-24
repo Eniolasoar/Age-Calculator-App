@@ -39,10 +39,10 @@
     min-height: 250px;
     border-radius: 10px 10px 30% 10px;
     box-shadow: 0px 0px 4px gray;
-    padding: 30px;
+    padding: 30px 30px 0px 30px;
   }
   .bottom-content {
-    padding: 60px 0 30px 0;
+    padding: 80px 0 30px 0;
   }
   .label {
     font-family: "Poppins";
@@ -112,7 +112,7 @@
     margin-right: 10px;
   }
   .paragraph p{
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 900 !important;
     color: black;
     margin: 0;
@@ -122,7 +122,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 80px;
+    
   }
   .material-symbols-outlined {
     /*on hover,move symbol*/
@@ -158,7 +158,7 @@
        
     }
     .paragraph p{
-      font-size: 45px;
+      font-size: 40px;
     }
     .output{
       font-size: 50px !important;
@@ -178,11 +178,14 @@
   }
   .line{
     position:relative;
-    top: 40px;
+    top: 75px;
   }
   .top-content{
 
     width: 100%;
+  }
+  .bottom-content {
+    padding: 100px 0 30px 0;
   }
 
   }
