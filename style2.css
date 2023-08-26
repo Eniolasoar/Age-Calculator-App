@@ -14,7 +14,7 @@
   
   body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--Light-Grey);
+    background-color: var(--Off-White);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -50,7 +50,7 @@
     max-width: 600px;
     border-radius: 10px 10px 30% 10px;
     box-shadow: 0px 0px 4px gray;
-    padding: 30px 30px 0px 30px;
+    padding: 40px 40px 0px 40px;
   }
   .bottom-content {
     padding: 60px 0 30px 0;
@@ -101,9 +101,8 @@
   font-weight: 800;
 }
   .circle {
-    background-color: var(--Purple);;
-    width: 70px;
-    height: 70px;
+    background-color: var(--Purple);
+    padding: 10px;
     border-radius: 50%;
     display: flex;
     align-items: center;
