@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-Red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-White: hsl(0, 0%, 94%);
+  --Light-Grey: hsl(0, 0%, 86%);
+  --Smoke-Grey: hsl(0, 1%, 44%);
+  --Off-Black: hsl(0, 0%, 8%);
+}
 * {
     box-sizing: border-box;
   }
   
   body {
-    background:url(Glitter\ Heart\ &\ Star\ Backgrounds\ Set\ _\ Glitter\ Shape\ Patterned\ Backgrounds\ _\ High\ Resolution\ Images\ _\ rawpixel.jpeg);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--Light-Grey);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -11,6 +22,7 @@
     align-items: center;
   }
   h2{
+    text-align: center;
     font-size: 40px;
     margin: 0;
     color:hsl(259, 100%, 65%) ;
@@ -22,6 +34,7 @@
     min-height: 568px;
     align-items: center;
     justify-content: center;
+ 
   }
   .top-content{
     display:flex;
@@ -29,26 +42,23 @@
     align-items: center;
     justify-content: left;
     gap:8%;
-    width: 300px;
+    width: 400px;
   }
   .content {
     background-color: hsl(0, 0%, 100%);
     width: 60%;
-    max-width: 550px;
-    min-width: 300px;
-    min-height: 250px;
+    max-width: 600px;
     border-radius: 10px 10px 30% 10px;
     box-shadow: 0px 0px 4px gray;
     padding: 30px 30px 0px 30px;
   }
   .bottom-content {
-    padding: 80px 0 30px 0;
+    padding: 60px 0 30px 0;
   }
   .label {
     font-family: "Poppins";
     color: hsl(0, 1%, 44%);
-    font-weight: 300;
-    font-size: 13px;
+    font-weight: 600;
     
     
   }
@@ -86,58 +96,57 @@
     outline: none;
     border: 1px solid hsl(259, 100%, 65%);
   }
+  input::placeholder {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
   .circle {
-    background-color: rgb(0, 0, 0);
+    background-color: var(--Purple);;
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    position: absolute;
-    top: -35px;
-    right: 0;
+    display: flex;
+    align-items: center;
+  }
+  hr{
+   color: var(--Light-Grey);
+   width: 100%;
   }
   .line {
     width: 100%;
     height: 1px;
-    background-color: hsl(0, 1%, 44%);
+
     opacity: 0.3;
     position: relative;
     top:50px;
+    display: flex;
+    align-items: center;
+
   }
   
   .output {
     font-family: "Poppins";
-    font-size: 69px !important;
     font-weight: 900 !important;
     color: hsl(259, 100%, 65%);
     margin-right: 10px;
   }
-  .paragraph p{
-    font-size: 60px;
-    font-weight: 900 !important;
-    color: black;
+  .bottom-content h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    font-style: italic;
+    height: fit-content;
     margin: 0;
-    font-family: "Poppins";
   }
-  .paragraph{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
+  
+  .bottom-content span {
+    color: var(--Purple);
   }
-  .material-symbols-outlined {
-    /*on hover,move symbol*/
-    font-size: 70px !important;
-    font-weight: 900 !important;
-    display: flex;
-    align-items: center;
-    transition: 1s all;
-    color: white;
-  }
+  
   .circle:hover {
     cursor: pointer;
-    background-color: rgba(133, 77, 255, 90%);
+    background-color: var(--Off-Black);
   }
-  .circle:hover .material-symbols-outlined {
+  .circle:hover img {
     padding-top: 15px;
   }
   .box{
@@ -146,8 +155,14 @@
     align-items: first baseline;
     height:80px ;
   }
+  .attribution { font-size: 20px; text-align: center; color:black
+  }
+      .attribution a { color:hsl(259, 100%, 65%); }
+  
   @media screen and (max-width:700px){
-    
+    .content{
+      width: 80%;
+    }
     .input{
       display: flex;
       gap: 10px;
@@ -157,9 +172,7 @@
         font-size: 20px;
        
     }
-    .paragraph p{
-      font-size: 40px;
-    }
+    
     .output{
       font-size: 50px !important;
     }
@@ -185,7 +198,10 @@
     width: 100%;
   }
   .bottom-content {
-    padding: 100px 0 30px 0;
+    padding: 80px 0 30px 0;
+  }
+  .bottom-content h1 {
+    font-size: 2.5rem;
   }
 
   }

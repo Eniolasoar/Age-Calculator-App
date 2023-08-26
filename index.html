@@ -12,9 +12,6 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style2.css" />
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
 
@@ -23,8 +20,9 @@
   <body>
     <h2>Age Calculator App</h2>
     <div class="outer-container">
-      
+   
     <div class="content">
+      
         <div class="top-content">
             <div class="box"style="text-align: center;">
                 <p id="dayLabel"class="label">DAY</p>
@@ -41,7 +39,7 @@
             
             <div class="box"style="text-align: center;">
                 <p id="yearLabel"class="label">YEAR</p>
-              <input type="text" name="" id="year" placeholder="YY"/>
+              <input type="text" name="" id="year" placeholder="YYYY"/>
               <span id="errorMessage3"class="errorMessage"></span>
             </div>
             
@@ -50,30 +48,25 @@
         </div>
 
         <div class="line">
+          <hr>
           <div class="circle" id="button">
-            <span class="material-symbols-outlined"> arrow_downward </span>
+            <img src="./assets/images/icon-arrow.svg" alt="">
           </div>
         </div>
         <div class="bottom-content">
           
-          <div class="paragraph"><span class="yearOutput output">- -</span><p>years</p> </div>
-          <div class="paragraph">
-            <span class="monthOutput output">- -</span>
-            <p> months</p>
-          </div>
-          <div class="paragraph"><span class="dayOutput output">- -</span><p>days</p> </div>
+          <h1><span class="yearOutput output">--</span>years</h1>
+          <h1><span class="monthOutput output">--</span>months</h1>
+           <h1> <span class="dayOutput output">--</span>days</h1>
         </div>
       </div>
       <script src="validation.js"></script>
 
       
     </div>
-    <div>
-    <p style="margin: 0px;">Made with <i class="material-icons" style="color:red">favorite</i> by <a href="mailto:eniolanishe@gmail.com?subject=Inquiry&body=Hello%20there.">SoarAcademy</a></p>
-    <a href="https://github.com/Eniolasoar">
-      <!--<a target="_blank" href="https://icons8.com/icon/12599/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
-      <img src="github.png" alt="" width="30" style="display:block;margin:auto">
-    </a>
-    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/eniolasoar">Eniola Anishe</a>.
+    </div> 
   </body>
 </html>

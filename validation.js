@@ -69,13 +69,13 @@ document.querySelector("#button").addEventListener("click", function () {
   }
 
   if (day !== "" && month !== "" && year !== "") {
-    if (day >= 1 || day <= 31) {
-      if (month >= 1 || month <= 12) {
+    if (day >= 1 && day <= 31) {
+      if (month >= 1 && month <= 12) {
         if (year <= currentYear) {
           console.log("Day:", day);
 console.log("Month:", month);
           if (checkValidDate(day, month) === true) {
-            calculateAge();
+            calculateAge2();
           }
         }
       }
@@ -247,4 +247,51 @@ function calculateAge() {
   yearOutput.innerHTML = calculatedYear;
   monthOutput.innerHTML = calculatedMonth;
   dayOutput.innerHTML = Math.floor(calculatedDay);
+}
+function calculateAge2(){
+  //This is the output location
+  let dayOutput = document.querySelector(".dayOutput");
+  let monthOutput = document.querySelector(".monthOutput");
+  let yearOutput = document.querySelector(".yearOutput");
+
+  // Get user-provided values for day, month, and year from input fields.
+  const dayInput = parseInt(document.querySelector("#day").value, 10);
+  const monthInput = parseInt(document.querySelector("#month").value, 10) - 1; // Subtract 1 to get the correct month (0 to 11)
+  const yearInput = parseInt(document.querySelector("#year").value, 10);
+
+  let birthDate=Date.UTC(yearInput,monthInput,dayInput);
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+
+  // Calculate milliseconds since birthdate
+const millisecondsSinceBirth = currentDate - birthDate;
+
+const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25; // Taking into account leap years
+let years = Math.floor(millisecondsSinceBirth/ millisecondsPerYear);
+
+// Calculate the remaining months and days
+const remainingMilliseconds = millisecondsSinceBirth% millisecondsPerYear;
+
+const millisecondsPerMonth = millisecondsPerYear / 12;
+let months = Math.floor(remainingMilliseconds / millisecondsPerMonth);
+let days = Math.floor((remainingMilliseconds % millisecondsPerMonth) / (1000 * 60 * 60 * 24));
+
+// Check if birth month is greater than the current month
+const birthMonthIsFuture = monthInput > currentDate.getMonth();
+if(birthMonthIsFuture){
+  years -= 1;
+}
+
+// Adjust the calculatedMonth and calculatedDays based on day and month comparison
+  // Adjust the calculatedMonth and calculatedDays based on day and month comparison
+  if (currentDate.getDate() < dayInput) {
+    months -= 1;
+    const prevMonthDate = new Date(currentDate.getFullYear(), monthInput - 1, dayInput);
+    const daysInPrevMonth = (currentDate - prevMonthDate) / (1000 * 3600 * 24);
+    days += daysInPrevMonth;
+  }
+
+  yearOutput.innerHTML = years;
+  monthOutput.innerHTML = months;
+  dayOutput.innerHTML = days;
 }
